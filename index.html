@@ -4,12 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Non-Euclidean Physics Playground</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body { 
+      margin: 0; 
+      overflow: hidden; 
+      font-family: Arial, sans-serif;
+    }
+    canvas { 
+      display: block; 
+    }
+    #info {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      background-color: rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 5px;
+      user-select: none;
+    }
+    #controls {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: white;
+      background-color: rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
   <div id="info">
     <h2>Non-Euclidean Physics</h2>
-    <p>Move: WASD | Jump: Space | Look: Mouse</p>
+    <p>Move: WASD | Jump: Space | Dash: Shift | Look: Mouse</p>
     <p>Click to start experience</p>
   </div>
   <div id="controls">
@@ -18,8 +46,11 @@
     <button id="changeWorld">Change Portal Configuration</button>
   </div>
 
+  <!-- Load Three.js and Cannon.js libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
-  <script src="main.js"></script>
+  
+  <!-- Load application modules -->
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
